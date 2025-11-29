@@ -1,65 +1,51 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-slate-50" style={{ fontFamily: '"Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif' }}>
+      <div className="mx-auto max-w-5xl px-4 py-12">
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            オンラインツール集
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-slate-600">
+            ビジネスで役立つ実用的なWebツールを無料でご利用いただけます
           </p>
+        </header>
+
+        {/* Tool Cards Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* 全角半角変換ツール */}
+          <Link href="/tools/zenkaku-hankaku">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-slate-400 transition-colors cursor-pointer h-full">
+              <div className="flex items-start justify-between mb-4">
+                <div className="bg-indigo-50 p-3 rounded-lg">
+                  <svg className="w-6 h-6 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold text-slate-900 mb-2">
+                全角半角変換
+              </h2>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                カタカナ、英数字、記号の全角・半角を相互変換。銀行名入力や申請フォーム入力時のエラー対策に。
+              </p>
+              <div className="mt-4 text-sm font-medium text-indigo-900">
+                ツールを開く →
+              </div>
+            </div>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Footer */}
+        <footer className="mt-16 pt-8 border-t border-gray-200">
+          <p className="text-sm text-slate-500 text-center">
+            © 2024 オンラインツール集. All rights reserved.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
