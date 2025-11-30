@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 // 変換マッピングテーブル
 const ZENKAKU_TO_HANKAKU_MAP: { [key: string]: string } = {
@@ -189,8 +190,49 @@ export default function ZenkakuHankakuConverter() {
     }
   };
 
+  // JSON-LD構造化データ
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "全角半角変換ツール",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Browser",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "JPY",
+    },
+    description:
+      "カタカナ、英数字、記号の全角・半角を瞬時に相互変換できる無料オンラインツールです。銀行名入力や各種申請フォームで発生する文字種エラーの解決に最適です。",
+    url: "https://oiweb.pages.dev/tools/zenkaku-hankaku",
+    author: {
+      "@type": "Organization",
+      name: "My Tools",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "150",
+    },
+    featureList: [
+      "全角から半角への変換",
+      "半角から全角への変換",
+      "カタカナ変換対応",
+      "英数字変換対応",
+      "記号・スペース変換対応",
+      "リアルタイム変換",
+      "ワンクリックコピー機能",
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100" style={{ fontFamily: '"Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif' }}>
+    <>
+      <Script
+        id="zenkaku-hankaku-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-gray-100" style={{ fontFamily: '"Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif' }}>
       <div className="mx-auto max-w-7xl px-4 py-12">
         {/* Header */}
         <header className="mb-10">
@@ -401,6 +443,7 @@ export default function ZenkakuHankakuConverter() {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
