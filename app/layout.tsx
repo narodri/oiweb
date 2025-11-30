@@ -14,10 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oiweb.pages.dev"),
-  title: {
-    template: "%s | My Tools",
-    default: "My Tools - ビジネスで役立つオンラインツール集",
-  },
+  title: "OiWeb Tools",
   description:
     "ビジネスで役立つ実用的なWebツールを無料でご利用いただけます。全角半角変換など、業務効率を向上させるツールを提供しています。",
   keywords: [
@@ -72,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-site-verification-code",
+    google: "8Rr1MCX7eO-FnAgd4AFwa4ET8CWf154QS60R-X_K_ho",
   },
 };
 

@@ -42,7 +42,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-gray-200">
           <p className="text-sm text-slate-500 text-center">
-            © 2024 オンラインツール集. All rights reserved.
+            © 2025 オンラインツール集. All rights reserved.
           </p>
         </footer>
       </div>
