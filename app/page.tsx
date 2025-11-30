@@ -7,7 +7,7 @@ export default function Home() {
         {/* Header */}
         <header className="mb-12">
           <h1 className="text-3xl font-bold text-slate-900 mb-2">
-            オンラインツール集
+            OiWeb Tools
           </h1>
           <p className="text-slate-600">
             ビジネスで役立つ実用的なWebツールを無料でご利用いただけます
@@ -42,7 +42,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-gray-200">
           <p className="text-sm text-slate-500 text-center">
-            © 2025 オンラインツール集. All rights reserved.
+            © {new Date().getFullYear()} OiWeb Tools. All rights reserved.
           </p>
         </footer>
       </div>
